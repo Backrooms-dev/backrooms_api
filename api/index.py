@@ -12,12 +12,12 @@ load_dotenv(dotenv_path=".env")
 # Initialiser FastAPI
 app = FastAPI()
 
-# Configuration CORS
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=["*"],  # Remplace "*" par l'URL exacte de ton front-end pour plus de sécurité
     allow_credentials=True,
-    allow_methods=["*"],  # Autorise toutes les méthodes HTTP
-    allow_headers=["*"],  # Autorise tous les en-têtes
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Modèle pour la requête utilisateur
