@@ -1,4 +1,3 @@
-from mangum import Mangum
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import requests
@@ -111,5 +110,3 @@ async def chat(request: ChatRequest):
         # Log toute erreur
         print("Erreur dans le backend:", str(e))
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
-
-handler = Mangum(app)
